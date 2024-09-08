@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Главная страница</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Привет!</h1>
+    <div class="button-container">
+        <a href="{{ url_for('login') }}"><button>Войти</button></a>
+        <a href="{{ url_for('register') }}"><button>Регистрация</button></a>
+    </div>
+</body>
+</html>

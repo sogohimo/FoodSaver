@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  webfoodsaver:
+    build:
+      context: ./WebFoodSaver
+    volumes:
+      - webdb:/app/instance
+    ports:
+      - "5001:5000"
+    environment:
+      - FLASK_ENV=development
+
+  telegramfoodsaver:
+    build:
+      context: ./TelegramFoodSaver
+    volumes:
+      - webdb:/app/instance
+
+volumes:
+  webdb:

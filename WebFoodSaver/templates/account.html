@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Моя страница</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Моя страница</h1>
+    <form method="POST" action="{{ url_for('account') }}">
+        {{ form.hidden_tag() }}
+        <div class="form-row">
+            <div class="form-group">
+                <label for="full_name">Имя</label>
+                <input type="text" id="full_name" name="full_name" value="{{ user.full_name }}">
+            </div>
+            <div class="form-group">
+                <label for="password">Пароль</label>
+                <input type="password" id="password" name="password">
+            </div>
+            <div class="form-group">
+                <label for="confirm_password">Подтверждение пароля</label>
+                <input type="password" id="confirm_password" name="confirm_password">
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Обновить">
+            </div>
+        </div>
+    </form>
+</body>
+</html>
